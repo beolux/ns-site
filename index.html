@@ -171,10 +171,19 @@
 
 <script>
   // scroll reveal (respects reduced motion via CSS)
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  var revEls = document.querySelectorAll('.reveal');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.12});
+    revEls.forEach(function(el){ io.observe(el); });
+    // safety net: reveal anything still hidden after 1.5s (e.g. if observer never fires)
+    setTimeout(function(){ revEls.forEach(function(el){ el.classList.add('in'); }); }, 1500);
+  } else {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  }
 </script>
 
 </body>
