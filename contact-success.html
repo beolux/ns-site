@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Sent | Nick Severson</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23111827%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent — Nick Severson</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C6B57%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .center-screen{min-height:100vh;display:flex;align-items:center;justify-content:center}
+</style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 min-h-screen flex items-center justify-center">
-    <div class="max-w-md mx-auto px-6 text-center">
-        <div class="mx-auto w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6">
-            <i class="fa-solid fa-check text-2xl text-emerald-400"></i>
-        </div>
-        <h1 class="text-3xl font-semibold tracking-tight">Message Sent</h1>
-        <p class="text-zinc-400 mt-3">
-            Thanks for reaching out — I'll get back to you as soon as possible.
-        </p>
-        <a href="index.html"
-           class="inline-flex items-center gap-x-2 mt-8 bg-white hover:bg-zinc-100 text-zinc-900 font-semibold px-6 py-3 rounded-2xl transition-all">
-            <i class="fa-solid fa-arrow-left"></i>
-            <span>Back to Home</span>
-        </a>
+<body>
+
+<div class="center-screen">
+  <div class="wrap" style="max-width:440px;text-align:center">
+    <div class="placeholder-box">
+      <div class="icon">✓</div>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.8rem">Message Sent</h1>
+      <p>Thanks for reaching out — I'll get back to you as soon as possible.</p>
+      <p style="margin-top:28px"><a class="btn btn-primary" href="index.html">Back to Home</a></p>
     </div>
+  </div>
+</div>
+
 </body>
 </html>

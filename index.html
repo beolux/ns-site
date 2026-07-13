@@ -1,248 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nick Severson — Director of Client Strategy. 10+ years leading employee benefits strategy, client management, and executive consultation.">
-    <title>Nick Severson | Director of Client Strategy</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%23111827%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-        }
-        .heading-font {
-            font-family: 'Space Grotesk', 'Inter', sans-serif;
-            font-weight: 600;
-        }
-        .experience-card {
-            transition: all 0.3s ease;
-        }
-        .filter-btn {
-            transition: all 0.2s ease;
-        }
-        .filter-btn.active {
-            background-color: #111827;
-            color: white;
-            border-color: #111827;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nick Severson — Employee Benefits Strategy</title>
+<meta name="description" content="Nick Severson, CSFS® — Director of Client Strategy at James P. Bennett & Company. Helping employers rethink how health plans are funded, priced, and run.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C6B57%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-zinc-950 text-zinc-200">
-    <!-- Navbar -->
-    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-y-3">
-            <div class="flex items-center gap-x-3">
-                <div class="w-9 h-9 bg-white rounded-xl flex items-center justify-center">
-                    <span class="text-zinc-900 font-bold text-xl">NS</span>
-                </div>
-                <div>
-                    <div class="font-semibold text-xl tracking-tight">Nick Severson</div>
-                    <div class="text-xs text-zinc-400 -mt-0.5">Director of Client Strategy</div>
-                </div>
-            </div>
+<body>
 
-            <div class="flex items-center gap-x-4">
-                <a href="Nick-Severson-Resume.pdf" download
-                   class="px-5 py-2 text-sm font-medium hover:bg-zinc-900 rounded-2xl transition-colors flex items-center gap-x-2">
-                    <i class="fa-solid fa-download mr-1"></i>
-                    <span>Download Resume</span>
-                </a>
-                <a href="#family" class="px-5 py-2 text-sm font-medium bg-zinc-900 hover:bg-zinc-800 rounded-2xl transition-colors">
-                    Family Portal
-                </a>
-                <a href="contact.html" class="px-5 py-2 text-sm font-medium bg-zinc-900 hover:bg-zinc-800 rounded-2xl transition-colors">
-                    Contact
-                </a>
-            </div>
-        </div>
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="#top">Nick Severson<span>.</span></a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="navlist" onclick="const u=document.getElementById('navlist');const o=u.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+      <ul id="navlist">
+        <li><a href="#focus">Focus</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="Nick-Severson-Resume.pdf">Resume</a></li>
+        <li><a class="cta" href="#contact">Get in touch</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <div class="max-w-5xl mx-auto px-6 pt-16 pb-10">
-        <div class="max-w-3xl">
-            <div class="inline-flex items-center gap-x-2 bg-zinc-900 text-emerald-400 text-xs font-medium px-3 py-1 rounded-full mb-6">
-                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                OPEN TO OPPORTUNITIES
-            </div>
+<main id="top">
 
-            <h1 class="text-5xl sm:text-6xl font-semibold tracking-tighter heading-font">Nick Severson</h1>
-            <p class="mt-2 text-xl sm:text-2xl text-zinc-400">Director of Client Strategy</p>
+  <!-- ================= HERO ================= -->
+  <div class="wrap hero">
+    <p class="eyebrow mono">Employee Benefits Strategy · CSFS® · Southern California</p>
+    <h1>Healthcare is your <em>second-largest expense</em>. I help you manage it like one.</h1>
+    <p class="lede">
+      I'm Nick Severson, Director of Client Strategy at James P. Bennett &amp; Company.
+      For over a decade I've helped employers of 25–2,000 employees rethink how their
+      health plans are funded, priced, and run — from self-funding and captives to
+      pharmacy carve-outs, stop-loss strategy, and AI-enabled benefits operations.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="contact.html">Get in touch</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/nickseverson">Connect on LinkedIn</a>
+      <a class="quiet" href="Nick-Severson-Resume.pdf">Download resume (PDF)</a>
+    </div>
+  </div>
 
-            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-6 text-sm text-zinc-400">
-                <a href="contact.html" class="flex items-center gap-x-2 hover:text-white transition-colors">
-                    <i class="fa-solid fa-envelope w-4"></i>
-                    <span>Contact Me</span>
-                </a>
-                <a href="https://linkedin.com/in/nickseverson" target="_blank" rel="noopener" class="flex items-center gap-x-2 hover:text-white transition-colors">
-                    <i class="fa-brands fa-linkedin w-4"></i>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-        </div>
+  <!-- ================= PROOF LEDGER ================= -->
+  <div class="wrap ledger reveal">
+    <div class="ledger-grid">
+      <div><div class="num">10<sup>+</sup></div><div class="lbl">years in benefits strategy</div></div>
+      <div><div class="num">$5M<sup>+</sup></div><div class="lbl">annual benefits spend managed</div></div>
+      <div><div class="num">20<sup>+</sup></div><div class="lbl">employer clients advised</div></div>
+      <div><div class="num">1<sup>st</sup></div><div class="lbl">captive &amp; AI initiatives led at JPB</div></div>
+    </div>
+  </div>
+
+  <!-- ================= FOCUS ================= -->
+  <section id="focus" class="wrap">
+    <div class="sec-head reveal"><span class="mono">Where I focus</span><h2>Three levers that actually move cost</h2></div>
+    <div class="focus reveal">
+      <article>
+        <span class="mono tag">Funding</span>
+        <h3>Alternative funding &amp; captives</h3>
+        <p>Self-funded, level-funded, and captive strategies that give employers ownership of their claims data — and a reason to care about it. Led James P. Bennett's first captive funding initiative.</p>
+      </article>
+      <article>
+        <span class="mono tag">Pharmacy &amp; Risk</span>
+        <h3>PBM carve-outs &amp; stop-loss</h3>
+        <p>Pharmacy contracts and stop-loss placement are where the money hides. I evaluate, negotiate, and restructure both so renewal season stops feeling like a ransom note.</p>
+      </article>
+      <article>
+        <span class="mono tag">Operations</span>
+        <h3>AI-enabled benefits operations</h3>
+        <p>Built the firm's first AI-enablement strategy for benefits operations — using modern tooling to compress analysis, communication, and compliance work that used to take weeks.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" class="wrap">
+    <div class="sec-head reveal"><span class="mono">Experience</span><h2>Where I've done it</h2></div>
+
+    <div class="role reveal">
+      <div class="when">Sep 2025 — Present</div>
+      <div>
+        <h3>Director of Client Strategy</h3>
+        <p class="org">James P. Bennett &amp; Company</p>
+        <ul>
+          <li>Executive consultation and renewal strategy for 20+ employee benefits clients</li>
+          <li>Implemented the firm's first AI-enablement strategy for benefits operations</li>
+          <li>Led the firm's first benefits captive funding initiative</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Summary -->
-    <div class="max-w-5xl mx-auto px-6 pb-12">
-        <p class="text-lg text-zinc-300 max-w-4xl leading-relaxed">
-            Client-strategy leader with 10+ years managing complex benefits relationships — from executive-level consultation and renewal strategy to plan design, funding evaluation, and vendor partnerships for employers of 25–2,000 employees.
-        </p>
+    <div class="role reveal">
+      <div class="when">Mar 2024 — Sep 2025</div>
+      <div>
+        <h3>Senior Client Manager</h3>
+        <p class="org">Nava Benefits</p>
+        <ul>
+          <li>Managed over $5M in employee benefits spend with strong retention and growth</li>
+          <li>Delivered 5–10% ARR growth per account through cost-saving strategy</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Experience Section -->
-    <div class="max-w-5xl mx-auto px-6 pb-16" id="resume">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-8">
-            <div>
-                <h2 class="text-3xl font-semibold tracking-tight">Experience</h2>
-                <p class="text-zinc-400 mt-1">Filter by area of focus</p>
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap gap-2" id="filter-buttons" role="group" aria-label="Filter experience by category">
-                <button data-filter="all" class="filter-btn active px-4 py-1.5 text-sm font-medium border border-zinc-700 rounded-2xl hover:bg-zinc-900" aria-pressed="true">All</button>
-                <button data-filter="leadership" class="filter-btn px-4 py-1.5 text-sm font-medium border border-zinc-700 rounded-2xl hover:bg-zinc-900" aria-pressed="false">Leadership &amp; Strategy</button>
-                <button data-filter="client" class="filter-btn px-4 py-1.5 text-sm font-medium border border-zinc-700 rounded-2xl hover:bg-zinc-900" aria-pressed="false">Client Management</button>
-                <button data-filter="operations" class="filter-btn px-4 py-1.5 text-sm font-medium border border-zinc-700 rounded-2xl hover:bg-zinc-900" aria-pressed="false">Operations</button>
-            </div>
-        </div>
-
-        <div class="space-y-6" id="experience-container">
-
-            <!-- Director of Client Strategy -->
-            <div class="experience-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8" data-category="leadership client">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-y-1">
-                    <div>
-                        <div class="font-semibold text-xl">Director of Client Strategy</div>
-                        <div class="text-zinc-400">James P. Bennett &amp; Company</div>
-                    </div>
-                    <div class="text-sm text-zinc-400 md:text-right">Sep 2025 – Present</div>
-                </div>
-                <ul class="mt-5 space-y-2 text-sm text-zinc-300">
-                    <li>• Provide ongoing executive consultation and strategic guidance to 20+ employee benefits clients</li>
-                    <li>• Implemented the firm's first AI-enablement strategy for benefits operations</li>
-                    <li>• Led the firm's first benefits captive funding initiative</li>
-                </ul>
-            </div>
-
-            <!-- Senior Client Manager -->
-            <div class="experience-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8" data-category="client leadership">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-y-1">
-                    <div>
-                        <div class="font-semibold text-xl">Senior Client Manager</div>
-                        <div class="text-zinc-400">Nava Benefits</div>
-                    </div>
-                    <div class="text-sm text-zinc-400 md:text-right">Mar 2024 – Sep 2025</div>
-                </div>
-                <ul class="mt-5 space-y-2 text-sm text-zinc-300">
-                    <li>• Managed over $5M in employee benefits spend with strong retention and growth</li>
-                    <li>• Delivered 5–10% ARR growth per account and implemented cost-saving strategies</li>
-                </ul>
-            </div>
-
-            <!-- Client Manager -->
-            <div class="experience-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8" data-category="client operations">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-y-1">
-                    <div>
-                        <div class="font-semibold text-xl">Client Manager</div>
-                        <div class="text-zinc-400">Nava Benefits</div>
-                    </div>
-                    <div class="text-sm text-zinc-400 md:text-right">Oct 2021 – Mar 2024</div>
-                </div>
-                <ul class="mt-5 space-y-2 text-sm text-zinc-300">
-                    <li>• Built client success frameworks as the firm scaled from Series A to C</li>
-                    <li>• Administered HRIS and benefits administration platforms</li>
-                </ul>
-            </div>
-
-        </div>
+    <div class="role reveal">
+      <div class="when">Oct 2021 — Mar 2024</div>
+      <div>
+        <h3>Client Manager</h3>
+        <p class="org">Nava Benefits</p>
+        <ul>
+          <li>Built client success frameworks as the firm scaled from Series A to Series C</li>
+          <li>Administered HRIS and benefits administration platforms</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Skills -->
-    <div class="max-w-5xl mx-auto px-6 pb-16">
-        <h2 class="text-3xl font-semibold tracking-tight mb-6">Core Strengths</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">Enterprise Client Management</div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">Retention &amp; Account Growth</div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">Executive Relationship Building</div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">Consultative Problem-Solving</div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">Financial Analysis &amp; Strategy</div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">Self-Funding &amp; Captives</div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">AI &amp; Analytics Enablement</div>
-            <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3.5 text-sm">Cross-Functional Team Alignment</div>
-        </div>
+    <p class="resume-row reveal"><a class="btn btn-ghost" href="Nick-Severson-Resume.pdf">Full resume (PDF)</a></p>
+  </section>
+
+  <!-- ================= WRITING ================= -->
+  <section id="writing" class="wrap">
+    <div class="sec-head reveal"><span class="mono">Writing</span><h2>What I'm thinking about</h2></div>
+    <div class="posts reveal">
+      <!-- EDIT: point each card at the specific LinkedIn post URL -->
+      <a class="post" href="https://linkedin.com/in/nickseverson">
+        <span class="mono" style="color:var(--brass)">Explainer</span>
+        <h3>Trump Accounts, explained for employers</h3>
+        <p>A plain-English walkthrough of the new savings vehicle and what it means for benefits strategy.</p>
+        <span class="read">Read on LinkedIn →</span>
+      </a>
+      <a class="post" href="https://linkedin.com/in/nickseverson">
+        <span class="mono" style="color:var(--brass)">Cost Strategy</span>
+        <h3>GLP-1 coverage without blowing up the plan</h3>
+        <p>How employers are structuring GLP-1 access while protecting stop-loss and pharmacy spend.</p>
+        <span class="read">Read on LinkedIn →</span>
+      </a>
+      <a class="post" href="https://linkedin.com/in/nickseverson">
+        <span class="mono" style="color:var(--brass)">Plan Design</span>
+        <h3>Is an ICHRA right for your company?</h3>
+        <p>Where individual coverage HRAs genuinely fit — and where they're a solution looking for a problem.</p>
+        <span class="read">Read on LinkedIn →</span>
+      </a>
     </div>
+    <p class="writing-note">I publish regularly on employee benefits strategy — <a href="https://linkedin.com/in/nickseverson">follow along on LinkedIn</a>.</p>
+  </section>
 
-    <!-- Download Resume -->
-    <div class="max-w-5xl mx-auto px-6 pb-20 text-center">
-        <a href="Nick-Severson-Resume.pdf" download
-           class="inline-flex items-center gap-x-3 bg-white hover:bg-zinc-100 text-zinc-900 font-semibold px-8 py-4 rounded-2xl transition-all active:scale-[0.985]">
-            <i class="fa-solid fa-download"></i>
-            <span>Download Full Resume (PDF)</span>
-        </a>
-        <p class="text-xs text-zinc-500 mt-3">Updated July 2026</p>
+</main>
+
+<!-- ================= CONTACT + FOOTER ================= -->
+<div class="close-band" id="contact">
+  <div class="wrap">
+    <p class="mono reveal">Contact</p>
+    <h2 class="reveal">If your renewal came in ugly, let's talk before you sign it.</h2>
+    <p class="reveal">The fastest way to reach me is a direct message. I read everything and respond directly — no gatekeepers, no sales sequence.</p>
+    <div class="close-actions reveal">
+      <a class="btn btn-primary" href="contact.html">Send a message</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/nickseverson">LinkedIn</a>
     </div>
-
-    <!-- Family Portal Placeholder -->
-    <div id="family" class="max-w-5xl mx-auto px-6 pb-20">
-        <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-10 text-center">
-            <div class="mx-auto w-12 h-12 bg-zinc-800 rounded-2xl flex items-center justify-center mb-4">
-                <i class="fa-solid fa-users text-2xl text-zinc-400"></i>
-            </div>
-            <h3 class="text-2xl font-semibold">Family Portal</h3>
-            <p class="text-zinc-400 mt-2 max-w-md mx-auto">
-                Coming soon. A secure, private space for family members with role-based access to documents, travel plans, and shared files.
-            </p>
-        </div>
+    <div class="footer-meta">
+      <span>© <script>document.write(new Date().getFullYear())</script> Nick Severson. All rights reserved.</span>
+      <a class="family" href="family.html" title="Private family space — coming soon">Family Portal</a>
     </div>
+  </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="border-t border-zinc-800">
-        <div class="max-w-5xl mx-auto px-6 py-8 text-center text-xs text-zinc-500">
-            &copy; <span id="year"></span> Nick Severson. All rights reserved.
-        </div>
-    </footer>
+<script>
+  // scroll reveal (respects reduced motion via CSS)
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Filter functionality
-        function filterExperience(category) {
-            const cards = document.querySelectorAll('.experience-card');
-
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category.includes(category)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Add click listeners to filter buttons
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('#filter-buttons button');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    buttons.forEach(btn => {
-                        btn.classList.remove('active', 'bg-zinc-900', 'text-white');
-                        btn.setAttribute('aria-pressed', 'false');
-                    });
-
-                    button.classList.add('active', 'bg-zinc-900', 'text-white');
-                    button.setAttribute('aria-pressed', 'true');
-
-                    filterExperience(button.getAttribute('data-filter'));
-                });
-            });
-        });
-    </script>
 </body>
 </html>
