@@ -10,6 +10,7 @@
   --max:1120px;
   --pad:clamp(24px,5vw,48px);
   --gap-section:clamp(88px,15vh,160px);
+  --gap-section-lg:clamp(130px,22vh,240px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -84,7 +85,7 @@ h1 em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:var
 .ledger .lbl{color:var(--ink-soft);margin-top:4px;font-size:1rem}
 
 /* ---------- sections ---------- */
-section{padding:0 0 var(--gap-section)}
+section{padding:0 0 var(--gap-section-lg)}
 .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:clamp(36px,6vh,56px)}
 .sec-head .mono{color:var(--pine)}
 .sec-head::after{content:"";flex:1;height:1px;background:var(--line)}
