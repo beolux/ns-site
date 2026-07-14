@@ -8,7 +8,7 @@
   --line:rgba(20,33,27,.12);
   --line-strong:rgba(20,33,27,.24);
   --max:1120px;
-  --pad:clamp(24px,5vw,48px);
+  --pad:clamp(32px,6vw,48px);
   --gap-section:clamp(88px,15vh,160px);
   --gap-section-lg:clamp(130px,22vh,240px);
 }
@@ -179,6 +179,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--pine);outline-offse
 
 /* ---------- responsive ---------- */
 @media (max-width:720px){
+  :root{--pad:32px}
   nav ul{
     display:none;position:absolute;top:68px;left:0;right:0;
     background:var(--paper);border-bottom:1px solid var(--line);
