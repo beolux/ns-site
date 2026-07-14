@@ -78,7 +78,7 @@ h1 em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:var
 .page-hero p.lede{margin:20px auto 0;text-align:center}
 
 /* ---------- proof ledger ---------- */
-.ledger{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);padding:clamp(28px,4vh,40px) 0;margin-bottom:var(--gap-section)}
+.ledger{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);padding:clamp(28px,4vh,40px) 0;margin-bottom:var(--gap-section-lg)}
 .ledger-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(28px,4vw,44px)}
 .ledger .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.9rem,2.6vw,2.3rem);letter-spacing:-.02em}
 .ledger .num sup{font-size:.62em;color:var(--brass);top:-.7em}
