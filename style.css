@@ -48,7 +48,7 @@ nav .cta:hover{background:var(--pine-deep);color:#fff}
 .menu-btn{display:none;background:none;border:1px solid var(--line-strong);border-radius:8px;padding:6px 12px;font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.1em;cursor:pointer;color:var(--ink)}
 
 /* ---------- hero ---------- */
-.hero{padding:clamp(72px,13vh,140px) 0 clamp(56px,9vh,96px)}
+.hero{padding-top:clamp(72px,13vh,140px);padding-bottom:clamp(56px,9vh,96px)}
 .eyebrow{color:var(--pine);margin-bottom:clamp(28px,5vh,44px);display:flex;align-items:center;gap:16px}
 .eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
 h1{
@@ -78,7 +78,7 @@ h1 em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:var
 .page-hero p.lede{margin:20px auto 0;text-align:center}
 
 /* ---------- proof ledger ---------- */
-.ledger{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);padding:clamp(28px,4vh,40px) 0;margin-bottom:var(--gap-section-lg)}
+.ledger{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);padding-top:clamp(28px,4vh,40px);padding-bottom:clamp(28px,4vh,40px);margin-bottom:var(--gap-section-lg)}
 .ledger-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:clamp(28px,4vw,44px)}
 .ledger .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.9rem,2.6vw,2.3rem);letter-spacing:-.02em}
 .ledger .num sup{font-size:.62em;color:var(--brass);top:-.7em}
