@@ -85,7 +85,7 @@ h1 em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:var
 .ledger .lbl{color:var(--ink-soft);margin-top:4px;font-size:1rem}
 
 /* ---------- sections ---------- */
-section{padding:0 0 var(--gap-section-lg)}
+#focus,#experience,#writing{padding-bottom:var(--gap-section-lg)}
 .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:clamp(36px,6vh,56px)}
 .sec-head .mono{color:var(--pine)}
 .sec-head::after{content:"";flex:1;height:1px;background:var(--line)}
