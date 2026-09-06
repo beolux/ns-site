@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Liability Calculator — Nick Severson</title>
+<meta name="description" content="Estimate your worst-case annual healthcare cash liability from premium, deductible, and out-of-pocket maximum versus salary.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C6B57%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html">Nick Severson</a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="navlist" onclick="const u=document.getElementById('navlist');const o=u.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+      <ul id="navlist">
+        <li><a href="index.html#focus">Focus</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#writing">Writing</a></li>
+        <li><a href="Nick-Severson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a class="cta" href="contact.html">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero reveal">
+    <p class="eyebrow mono" style="justify-content:center"><span>Calculator</span></p>
+    <h1>Worst-case healthcare cash liability</h1>
+    <p class="lede">Plug in your individual premium, deductible, and in-network out-of-pocket max. See what a bad claims year could cost relative to salary.</p>
+  </div>
+
+  <div class="wrap calc-layout">
+    <div class="card reveal">
+      <form id="liability-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="premium">Premium amount ($)</label>
+            <input type="number" id="premium" name="premium" min="0" step="1" required placeholder="250">
+          </div>
+          <div class="field">
+            <label for="cadence">Paid</label>
+            <select id="cadence" name="cadence" required>
+              <option value="per_pay">Per pay period</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field" id="pay-periods-field">
+          <label for="payPeriods">Pay periods per year</label>
+          <select id="payPeriods" name="payPeriods">
+            <option value="26">26 (biweekly)</option>
+            <option value="24" selected>24 (semi-monthly)</option>
+            <option value="12">12 (monthly)</option>
+            <option value="52">52 (weekly)</option>
+          </select>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="deductible">Individual deductible ($)</label>
+            <input type="number" id="deductible" name="deductible" min="0" step="1" required placeholder="2000">
+            <p class="field-hint">Shown for context. Worst-case medical cost uses your OOP max.</p>
+          </div>
+          <div class="field">
+            <label for="oopm">In-network OOP maximum ($)</label>
+            <input type="number" id="oopm" name="oopm" min="0" step="1" required placeholder="6000">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="salary">Annual salary ($)</label>
+          <input type="number" id="salary" name="salary" min="1" step="1000" required placeholder="120000">
+          <p class="field-hint">Rounded to the nearest $1,000 when you calculate.</p>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calculate liability</button>
+      </form>
+    </div>
+
+    <div class="card calc-results reveal" id="results" hidden>
+      <p class="mono tag" style="color:var(--brass)">Results · Individual coverage</p>
+      <div class="calc-flag" id="flag" aria-live="polite"></div>
+      <div class="calc-grid">
+        <div>
+          <div class="calc-lbl">Annual premium</div>
+          <div class="calc-num" id="out-premium">—</div>
+        </div>
+        <div>
+          <div class="calc-lbl">Worst-case medical (OOP max)</div>
+          <div class="calc-num" id="out-medical">—</div>
+        </div>
+        <div>
+          <div class="calc-lbl">Worst-case total cash</div>
+          <div class="calc-num" id="out-total">—</div>
+        </div>
+        <div>
+          <div class="calc-lbl">Share of salary</div>
+          <div class="calc-num" id="out-ratio">—</div>
+        </div>
+      </div>
+      <p class="calc-note" id="out-detail"></p>
+    </div>
+  </div>
+
+  <div class="wrap calc-disclaimer reveal">
+    <p>This tool is educational, not advice. Numbers are only as good as what you enter — verify premium, deductible, and out-of-pocket maximum against your Summary of Benefits and Coverage (SBC). It models individual in-network worst-case cash (annualized premium + OOP max). It does not account for family coverage, out-of-network costs, HSA/FSA offsets, employer contributions beyond the premium you enter, or state-specific rules.</p>
+  </div>
+</main>
+
+<footer class="plain-footer">
+  <div class="wrap">
+    <span>© <script>document.write(new Date().getFullYear())</script> Nick Severson. All rights reserved.</span>
+    <a href="calculator.html">Healthcare liability calculator</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('liability-form');
+  var cadence = document.getElementById('cadence');
+  var payField = document.getElementById('pay-periods-field');
+  var results = document.getElementById('results');
+
+  function money(n) {
+    return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  }
+
+  function togglePayPeriods() {
+    var perPay = cadence.value === 'per_pay';
+    payField.hidden = !perPay;
+    document.getElementById('payPeriods').required = perPay;
+  }
+
+  cadence.addEventListener('change', togglePayPeriods);
+  togglePayPeriods();
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var premium = Number(document.getElementById('premium').value);
+    var oopm = Number(document.getElementById('oopm').value);
+    var salaryRaw = Number(document.getElementById('salary').value);
+    if (!(premium >= 0) || !(oopm >= 0) || !(salaryRaw > 0)) return;
+
+    var periods = cadence.value === 'per_pay'
+      ? Number(document.getElementById('payPeriods').value)
+      : 12;
+    var salary = Math.round(salaryRaw / 1000) * 1000;
+    if (salary < 1000) salary = 1000;
+
+    var annualPremium = premium * periods;
+    var worstCaseMedical = oopm;
+    var worstCaseTotal = annualPremium + worstCaseMedical;
+    var ratio = worstCaseTotal / salary;
+    var pct = ratio * 100;
+
+    var flagEl = document.getElementById('flag');
+    var label, cls;
+    if (ratio < 0.05) {
+      label = 'Manageable';
+      cls = 'flag-manageable';
+    } else if (ratio <= 0.10) {
+      label = 'Stretch';
+      cls = 'flag-stretch';
+    } else {
+      label = 'Tight';
+      cls = 'flag-tight';
+    }
+
+    flagEl.className = 'calc-flag ' + cls;
+    flagEl.textContent = label;
+    document.getElementById('out-premium').textContent = money(annualPremium);
+    document.getElementById('out-medical').textContent = money(worstCaseMedical);
+    document.getElementById('out-total').textContent = money(worstCaseTotal);
+    document.getElementById('out-ratio').textContent = pct.toFixed(1) + '%';
+    document.getElementById('out-detail').textContent =
+      'Based on ' + money(premium) + (cadence.value === 'per_pay' ? ' × ' + periods + ' pay periods' : ' × 12 months') +
+      ', OOP max ' + money(oopm) + ', and salary rounded to ' + money(salary) +
+      '. Deductible is not added on top of OOP max for worst-case medical.';
+
+    results.hidden = false;
+    results.classList.add('in');
+    results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+</script>
+
+<script>
+  var revEls = document.querySelectorAll('.reveal');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.12});
+    revEls.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ revEls.forEach(function(el){ el.classList.add('in'); }); }, 1500);
+  } else {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+
+</body>
+</html>
