@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare liability calculator · Nick Severson</title>
+<meta name="description" content="Estimate worst-case healthcare costs on your plan — your premiums plus the out-of-pocket maximum — as a share of salary.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C6B57%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html">Nick Severson</a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="navlist" onclick="const u=document.getElementById('navlist');const o=u.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+      <ul id="navlist">
+        <li><a href="index.html#focus">Focus</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#writing">Writing</a></li>
+        <li><a href="Nick-Severson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a class="cta" href="contact.html">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero reveal">
+    <p class="eyebrow mono" style="justify-content:center"><span>Calculator</span></p>
+    <h1>Healthcare liability calculator</h1>
+    <p class="lede">See the most you’d pay in a bad year on your plan — premiums plus the out-of-pocket maximum — against your salary.</p>
+    <p class="calc-oneliner">Math only. Not advice.</p>
+  </div>
+
+  <div class="wrap calc-layout">
+    <div class="card reveal">
+      <form id="liability-form" novalidate>
+        <p class="mono calc-section">Your premium</p>
+        <div class="field">
+          <label for="cadence">Enter premium as</label>
+          <select id="cadence" name="cadence" required>
+            <option value="per_pay">Per paycheck</option>
+            <option value="monthly">Per month</option>
+          </select>
+          <p class="field-hint">Enter per paycheck or per month — not both.</p>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="premium" id="premium-label">Premium per paycheck</label>
+            <input type="number" id="premium" name="premium" min="0" step="1" required placeholder="250">
+            <p class="field-hint">Your share only, not the full premium.</p>
+          </div>
+          <div class="field" id="pay-periods-field">
+            <label for="payPeriods">Paychecks per year</label>
+            <select id="payPeriods" name="payPeriods">
+              <option value="26">26 (biweekly)</option>
+              <option value="24" selected>24 (semi-monthly)</option>
+              <option value="12">12</option>
+              <option value="52">52 (weekly)</option>
+            </select>
+            <p class="field-hint">Common defaults: 24 or 26. Use 12 if you enter a monthly amount instead.</p>
+          </div>
+        </div>
+
+        <p class="mono calc-section">Plan numbers (individual)</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="deductible">Annual deductible</label>
+            <input type="number" id="deductible" name="deductible" min="0" step="1" required placeholder="2000">
+            <p class="field-hint">From your SBC — individual in-network.</p>
+          </div>
+          <div class="field">
+            <label for="oopm">Out-of-pocket maximum</label>
+            <input type="number" id="oopm" name="oopm" min="0" step="1" required placeholder="6000">
+            <p class="field-hint">Individual in-network. This is the ceiling for covered care in a worst-case year.</p>
+          </div>
+        </div>
+
+        <p class="mono calc-section">Salary</p>
+        <div class="field">
+          <label for="salary">Approximate annual salary</label>
+          <input type="number" id="salary" name="salary" min="1" step="1000" required placeholder="120000">
+          <p class="field-hint">Round is fine. Used only to size the total against your income. Stays in your browser.</p>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Calculate</button>
+        <p class="field-hint calc-empty" id="empty-hint">Enter premium, OOP max, and salary to see your numbers.</p>
+      </form>
+    </div>
+
+    <div class="card calc-results reveal" id="results" hidden>
+      <p class="mono tag" style="color:var(--brass)">Your numbers</p>
+      <div class="calc-flag" id="flag" aria-live="polite"></div>
+      <p class="calc-flag-blurb" id="flag-blurb"></p>
+      <p class="field-hint" id="flag-note" hidden>Households differ. This is a sizing lens, not a recommendation to enroll or waive.</p>
+      <div class="calc-grid">
+        <div>
+          <div class="calc-lbl">Annual premium (your share)</div>
+          <div class="calc-num" id="out-premium">—</div>
+        </div>
+        <div>
+          <div class="calc-lbl">Worst-case medical (OOP max)</div>
+          <div class="calc-num" id="out-medical">—</div>
+          <p class="field-hint">Ceiling for covered in-network care if you hit the out-of-pocket maximum.</p>
+        </div>
+        <div>
+          <div class="calc-lbl">Worst-case total</div>
+          <div class="calc-num" id="out-total">—</div>
+          <p class="field-hint">Premium + OOP max.</p>
+        </div>
+        <div>
+          <div class="calc-lbl">Share of salary</div>
+          <div class="calc-num" id="out-ratio">—</div>
+        </div>
+      </div>
+      <p class="calc-note">Doesn’t include out-of-network costs, non-covered services, balance billing, or tax-advantaged accounts (HSA/FSA).</p>
+    </div>
+  </div>
+
+  <div class="wrap calc-disclaimer reveal">
+    <p>Educational math only. Not insurance, tax, or legal advice. Not a recommendation to enroll in or waive any plan. Confirm numbers against your Summary of Benefits and Coverage. Worst-case assumes you reach the in-network out-of-pocket maximum for covered services.</p>
+  </div>
+</main>
+
+<footer class="plain-footer">
+  <div class="wrap">
+    <span>© <script>document.write(new Date().getFullYear())</script> Nick Severson. All rights reserved.</span>
+    <a href="calculator.html">Calculator</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('liability-form');
+  var cadence = document.getElementById('cadence');
+  var payField = document.getElementById('pay-periods-field');
+  var premiumLabel = document.getElementById('premium-label');
+  var results = document.getElementById('results');
+  var emptyHint = document.getElementById('empty-hint');
+
+  function money(n) {
+    return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  }
+
+  function toggleCadence() {
+    var perPay = cadence.value === 'per_pay';
+    payField.hidden = !perPay;
+    document.getElementById('payPeriods').required = perPay;
+    premiumLabel.textContent = perPay ? 'Premium per paycheck' : 'Premium per month';
+  }
+
+  cadence.addEventListener('change', toggleCadence);
+  toggleCadence();
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var premium = Number(document.getElementById('premium').value);
+    var oopm = Number(document.getElementById('oopm').value);
+    var salaryRaw = Number(document.getElementById('salary').value);
+    if (!(premium >= 0) || !(oopm >= 0) || !(salaryRaw > 0)) return;
+
+    var periods = cadence.value === 'per_pay'
+      ? Number(document.getElementById('payPeriods').value)
+      : 12;
+    var salary = Math.round(salaryRaw / 1000) * 1000;
+    if (salary < 1000) salary = 1000;
+
+    var annualPremium = premium * periods;
+    var worstCaseMedical = oopm;
+    var worstCaseTotal = annualPremium + worstCaseMedical;
+    var ratio = worstCaseTotal / salary;
+    var pct = ratio * 100;
+
+    var flagEl = document.getElementById('flag');
+    var blurbEl = document.getElementById('flag-blurb');
+    var noteEl = document.getElementById('flag-note');
+    var label, cls, blurb;
+    if (ratio < 0.05) {
+      label = 'Manageable';
+      cls = 'flag-manageable';
+      blurb = 'Worst-case total is under 5% of salary.';
+    } else if (ratio <= 0.10) {
+      label = 'Stretch';
+      cls = 'flag-stretch';
+      blurb = 'Worst-case total is 5–10% of salary.';
+    } else {
+      label = 'Tight';
+      cls = 'flag-tight';
+      blurb = 'Worst-case total is over 10% of salary.';
+    }
+
+    flagEl.className = 'calc-flag ' + cls;
+    flagEl.textContent = label;
+    blurbEl.textContent = blurb;
+    noteEl.hidden = false;
+    document.getElementById('out-premium').textContent = money(annualPremium);
+    document.getElementById('out-medical').textContent = money(worstCaseMedical);
+    document.getElementById('out-total').textContent = money(worstCaseTotal);
+    document.getElementById('out-ratio').textContent = pct.toFixed(1) + '% of salary';
+    emptyHint.hidden = true;
+
+    results.hidden = false;
+    results.classList.add('in');
+    results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+</script>
+
+<script>
+  var revEls = document.querySelectorAll('.reveal');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.12});
+    revEls.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ revEls.forEach(function(el){ el.classList.add('in'); }); }, 1500);
+  } else {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+
+</body>
+</html>
