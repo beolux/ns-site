@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open enrollment checklist · Nick Severson</title>
+<meta name="description" content="A practical open enrollment checklist — compare SBCs, run worst-case costs, confirm doctors and drugs, then submit.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C6B57%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html">Nick Severson</a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="navlist" onclick="const u=document.getElementById('navlist');const o=u.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+      <ul id="navlist">
+        <li><a href="index.html#focus">Focus</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#writing">Writing</a></li>
+        <li><a href="Nick-Severson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a class="cta" href="contact.html">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero reveal no-print-offset">
+    <p class="eyebrow mono" style="justify-content:center"><span>Open enrollment</span></p>
+    <h1>Open enrollment checklist</h1>
+    <p class="lede">A short list before you click submit. Check items off here or print it. Educational only — not a recommendation to enroll in or waive any plan.</p>
+    <p class="calc-actions reveal">
+      <button type="button" class="btn btn-ghost" onclick="window.print()">Print checklist</button>
+      <a class="btn btn-primary" href="calculator.html">Open liability calculator</a>
+    </p>
+  </div>
+
+  <div class="wrap checklist-wrap">
+    <div class="card checklist reveal">
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Confirm who’s covering you</strong>
+          <span class="check-hint">List yourself and any dependents. Check if a spouse’s plan is an option.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Pull last year’s claims picture</strong>
+          <span class="check-hint">Roughly: routine care only, a big claim, or lots of specialists/Rx? That frames deductible vs richer copay plans.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Get every SBC</strong>
+          <span class="check-hint">Download the Summary of Benefits and Coverage for each medical option. Note deductible and in-network OOP max.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Run worst-case math</strong>
+          <span class="check-hint">Use the liability calculator with your premium share and OOP max vs salary.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Compare premiums, not just deductibles</strong>
+          <span class="check-hint">A lower deductible can cost more every paycheck. Look at full-year premium + OOP max.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Check the drug list</strong>
+          <span class="check-hint">If you take ongoing meds, confirm formulary tier and any prior auth.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Map your doctors</strong>
+          <span class="check-hint">Confirm PCPs, specialists, and preferred hospitals are in-network for the plan you’d pick.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Decide on HSA / FSA dollars</strong>
+          <span class="check-hint">If eligible, set a contribution you’ll actually use. Don’t leave free employer HSA money on the table.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Review dental, vision, life, disability</strong>
+          <span class="check-hint">Easy to skip — confirm defaults and beneficiaries.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>Screenshot or save confirmations</strong>
+          <span class="check-hint">After you submit elections, keep the confirmation page or email until the plan year starts.</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="wrap calc-disclaimer reveal">
+    <p>Your employer’s materials and plan documents win if anything conflicts. Stuck on deductible vs OOP max? See the <a href="glossary.html">benefits jargon decoder</a>.</p>
+  </div>
+</main>
+
+<footer class="plain-footer">
+  <div class="wrap">
+    <span>© <script>document.write(new Date().getFullYear())</script> Nick Severson. All rights reserved.</span>
+    <span class="footer-links">
+      <a href="calculator.html">Calculator</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="open-enrollment.html">Open enrollment</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  var revEls = document.querySelectorAll('.reveal');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.12});
+    revEls.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ revEls.forEach(function(el){ el.classList.add('in'); }); }, 1500);
+  } else {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+
+</body>
+</html>
