@@ -226,3 +226,47 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--pine);outline-offse
 .calc-section:not(:first-child){margin-top:28px}
 .calc-flag-blurb{color:var(--ink-soft);margin:-12px 0 8px;font-size:1rem}
 .calc-empty{margin-top:16px;text-align:center}
+
+/* ---------- shared soft footer links ---------- */
+.footer-links{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.footer-meta .footer-links a,.plain-footer .footer-links a{font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- glossary ---------- */
+.glossary-list{max-width:720px;padding-bottom:clamp(48px,8vh,80px);display:flex;flex-direction:column;gap:0}
+.glossary-item{padding:clamp(22px,3vh,28px) 0;border-top:1px solid var(--line)}
+.glossary-item:last-child{border-bottom:1px solid var(--line)}
+.glossary-item h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.15rem;margin-bottom:8px}
+.glossary-item p{color:var(--ink-soft);font-size:1rem;line-height:1.65}
+.calc-disclaimer a{color:var(--pine)}
+
+/* ---------- open enrollment checklist ---------- */
+.calc-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:clamp(20px,3vh,28px)}
+.checklist-wrap{max-width:720px;padding-bottom:clamp(40px,6vh,64px)}
+.checklist{display:flex;flex-direction:column;gap:0;padding:8px 28px}
+.check-item{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line);cursor:pointer}
+.check-item:first-child{border-top:none}
+.check-item input{margin-top:6px;width:18px;height:18px;accent-color:var(--pine);flex-shrink:0}
+.check-item strong{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.02rem;margin-bottom:4px}
+.check-hint{display:block;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+
+@media print{
+  header,.menu-btn,.calc-actions,.plain-footer,.page-hero .eyebrow,.calc-disclaimer{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .page-hero{padding:0 0 16px;text-align:left}
+  .page-hero h1{font-size:20pt;max-width:none}
+  .page-hero .lede{margin:8px 0 0;font-size:11pt;color:#333}
+  .checklist-wrap{max-width:none;padding:0}
+  .card.checklist{border:none;padding:0;box-shadow:none}
+  .check-item{break-inside:avoid;padding:10px 0}
+  .reveal{opacity:1!important;transform:none!important}
+}
+
+.field-hint a{color:var(--pine)}
+
+.glossary-intro{max-width:720px;padding-bottom:clamp(24px,4vh,36px)}
+.glossary-intro p{color:var(--ink-soft);font-size:1.05rem;line-height:1.7}
+.glossary-where{margin-top:10px;font-size:.9rem;color:var(--ink-soft);font-style:italic;line-height:1.5}
+.soft-cta{max-width:720px;padding:clamp(40px,7vh,64px) 0 clamp(32px,5vh,48px);border-top:1px solid var(--line)}
+.soft-cta h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(1.25rem,2vw,1.5rem);margin:12px 0 10px;letter-spacing:-.02em}
+.soft-cta p{color:var(--ink-soft);max-width:54ch;line-height:1.65}
+.check-hint a{color:var(--pine)}

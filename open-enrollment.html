@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open enrollment checklist · Nick Severson</title>
+<meta name="description" content="A simple process checklist for open enrollment — find your SBC, note the numbers that matter, run the math, then enroll.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C6B57%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="index.html">Nick Severson</a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="navlist" onclick="const u=document.getElementById('navlist');const o=u.classList.toggle('open');this.setAttribute('aria-expanded',o)">Menu</button>
+      <ul id="navlist">
+        <li><a href="index.html#focus">Focus</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#writing">Writing</a></li>
+        <li><a href="Nick-Severson-Resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        <li><a class="cta" href="contact.html">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero reveal">
+    <p class="eyebrow mono" style="justify-content:center"><span>Open enrollment</span></p>
+    <h1>Open enrollment checklist</h1>
+    <p class="lede">A process list for the week you have to click enroll. Not a recommendation for any plan type.</p>
+    <p class="calc-oneliner">Built for the open enrollment window. Print it or keep the tab open.</p>
+    <p class="calc-actions reveal">
+      <button type="button" class="btn btn-ghost" onclick="window.print()">Print checklist</button>
+      <a class="btn btn-primary" href="calculator.html">Open the healthcare liability calculator</a>
+    </p>
+  </div>
+
+  <div class="wrap glossary-intro reveal">
+    <p>You don’t need a 40-page strategy deck. You need the right documents, a few numbers, and one clear pass before you submit.</p>
+  </div>
+
+  <div class="wrap checklist-wrap">
+    <div class="card checklist reveal">
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>1. Find this year’s SBC for every plan you’re considering</strong>
+          <span class="check-hint">Summary of Benefits and Coverage — not just the marketing comparison chart.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>2. Write down three numbers per plan (individual in-network)</strong>
+          <span class="check-hint">Your premium share (per paycheck × pay periods, or monthly × 12); annual deductible; out-of-pocket maximum.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>3. Note whether the plan is HSA-eligible</strong>
+          <span class="check-hint">If yes, check employer HSA contribution (if any) in the benefits guide — separate from premium.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>4. Skim pharmacy</strong>
+          <span class="check-hint">If anyone in the household is on a regular or specialty med, check the formulary tier before you enroll.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>5. Run the liability math</strong>
+          <span class="check-hint">Use the <a href="calculator.html">healthcare liability calculator</a>: premium + OOPM = worst-case total, as a share of salary.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>6. Ask these before you click enroll</strong>
+          <span class="check-hint">Is the individual OOPM embedded in the family OOPM? Do copays count toward deductible, OOPM, or both? What’s in-network for our doctors and preferred hospital? Any prior auth on care or Rx we already know we need? If HSA: what’s the employer seed, if any?</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>7. Save PDFs</strong>
+          <span class="check-hint">Download the SBC (and formulary snapshot if you checked one) before the portal closes.</span>
+        </span>
+      </label>
+      <label class="check-item reveal">
+        <input type="checkbox">
+        <span>
+          <strong>8. Enroll — then confirm</strong>
+          <span class="check-hint">Submit elections. Check the confirmation screen or email so the plan you meant is the plan you got.</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="wrap soft-cta reveal">
+    <p class="mono" style="color:var(--pine)">Worst-case in one minute</p>
+    <h2>Premium share + out-of-pocket maximum, against your salary</h2>
+    <p style="margin-top:20px"><a class="btn btn-primary" href="calculator.html">Open the healthcare liability calculator</a></p>
+    <p class="field-hint" style="margin-top:16px">Print this page if you want a paper checklist at your desk.</p>
+  </div>
+
+  <div class="wrap calc-disclaimer reveal">
+    <p>Educational process checklist only. Not insurance, tax, or legal advice. Not a recommendation to enroll in or waive any plan. Confirm details against your SBC and employer materials.</p>
+  </div>
+</main>
+
+<footer class="plain-footer">
+  <div class="wrap">
+    <span>© <script>document.write(new Date().getFullYear())</script> Nick Severson. All rights reserved.</span>
+    <span class="footer-links">
+      <a href="calculator.html">Calculator</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="open-enrollment.html">Open enrollment</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  var revEls = document.querySelectorAll('.reveal');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    }, {threshold:.12});
+    revEls.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ revEls.forEach(function(el){ el.classList.add('in'); }); }, 1500);
+  } else {
+    revEls.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+
+</body>
+</html>
