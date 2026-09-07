@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Open enrollment checklist · Nick Severson</title>
-<meta name="description" content="A practical open enrollment checklist — compare SBCs, run worst-case costs, confirm doctors and drugs, then submit.">
+<meta name="description" content="A simple process checklist for open enrollment — find your SBC, note the numbers that matter, run the math, then enroll.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231C6B57%22/><text x=%2250%22 y=%2266%22 font-size=%2244%22 font-weight=%22700%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>NS</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,14 +30,19 @@
 </header>
 
 <main>
-  <div class="wrap page-hero reveal no-print-offset">
+  <div class="wrap page-hero reveal">
     <p class="eyebrow mono" style="justify-content:center"><span>Open enrollment</span></p>
     <h1>Open enrollment checklist</h1>
-    <p class="lede">A short list before you click submit. Check items off here or print it. Educational only — not a recommendation to enroll in or waive any plan.</p>
+    <p class="lede">A process list for the week you have to click enroll. Not a recommendation for any plan type.</p>
+    <p class="calc-oneliner">Built for the open enrollment window. Print it or keep the tab open.</p>
     <p class="calc-actions reveal">
       <button type="button" class="btn btn-ghost" onclick="window.print()">Print checklist</button>
-      <a class="btn btn-primary" href="calculator.html">Open liability calculator</a>
+      <a class="btn btn-primary" href="calculator.html">Open the healthcare liability calculator</a>
     </p>
+  </div>
+
+  <div class="wrap glossary-intro reveal">
+    <p>You don’t need a 40-page strategy deck. You need the right documents, a few numbers, and one clear pass before you submit.</p>
   </div>
 
   <div class="wrap checklist-wrap">
@@ -45,78 +50,71 @@
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Confirm who’s covering you</strong>
-          <span class="check-hint">List yourself and any dependents. Check if a spouse’s plan is an option.</span>
+          <strong>1. Find this year’s SBC for every plan you’re considering</strong>
+          <span class="check-hint">Summary of Benefits and Coverage — not just the marketing comparison chart.</span>
         </span>
       </label>
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Pull last year’s claims picture</strong>
-          <span class="check-hint">Roughly: routine care only, a big claim, or lots of specialists/Rx? That frames deductible vs richer copay plans.</span>
+          <strong>2. Write down three numbers per plan (individual in-network)</strong>
+          <span class="check-hint">Your premium share (per paycheck × pay periods, or monthly × 12); annual deductible; out-of-pocket maximum.</span>
         </span>
       </label>
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Get every SBC</strong>
-          <span class="check-hint">Download the Summary of Benefits and Coverage for each medical option. Note deductible and in-network OOP max.</span>
+          <strong>3. Note whether the plan is HSA-eligible</strong>
+          <span class="check-hint">If yes, check employer HSA contribution (if any) in the benefits guide — separate from premium.</span>
         </span>
       </label>
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Run worst-case math</strong>
-          <span class="check-hint">Use the liability calculator with your premium share and OOP max vs salary.</span>
+          <strong>4. Skim pharmacy</strong>
+          <span class="check-hint">If anyone in the household is on a regular or specialty med, check the formulary tier before you enroll.</span>
         </span>
       </label>
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Compare premiums, not just deductibles</strong>
-          <span class="check-hint">A lower deductible can cost more every paycheck. Look at full-year premium + OOP max.</span>
+          <strong>5. Run the liability math</strong>
+          <span class="check-hint">Use the <a href="calculator.html">healthcare liability calculator</a>: premium + OOPM = worst-case total, as a share of salary.</span>
         </span>
       </label>
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Check the drug list</strong>
-          <span class="check-hint">If you take ongoing meds, confirm formulary tier and any prior auth.</span>
+          <strong>6. Ask these before you click enroll</strong>
+          <span class="check-hint">Is the individual OOPM embedded in the family OOPM? Do copays count toward deductible, OOPM, or both? What’s in-network for our doctors and preferred hospital? Any prior auth on care or Rx we already know we need? If HSA: what’s the employer seed, if any?</span>
         </span>
       </label>
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Map your doctors</strong>
-          <span class="check-hint">Confirm PCPs, specialists, and preferred hospitals are in-network for the plan you’d pick.</span>
+          <strong>7. Save PDFs</strong>
+          <span class="check-hint">Download the SBC (and formulary snapshot if you checked one) before the portal closes.</span>
         </span>
       </label>
       <label class="check-item reveal">
         <input type="checkbox">
         <span>
-          <strong>Decide on HSA / FSA dollars</strong>
-          <span class="check-hint">If eligible, set a contribution you’ll actually use. Don’t leave free employer HSA money on the table.</span>
-        </span>
-      </label>
-      <label class="check-item reveal">
-        <input type="checkbox">
-        <span>
-          <strong>Review dental, vision, life, disability</strong>
-          <span class="check-hint">Easy to skip — confirm defaults and beneficiaries.</span>
-        </span>
-      </label>
-      <label class="check-item reveal">
-        <input type="checkbox">
-        <span>
-          <strong>Screenshot or save confirmations</strong>
-          <span class="check-hint">After you submit elections, keep the confirmation page or email until the plan year starts.</span>
+          <strong>8. Enroll — then confirm</strong>
+          <span class="check-hint">Submit elections. Check the confirmation screen or email so the plan you meant is the plan you got.</span>
         </span>
       </label>
     </div>
   </div>
 
+  <div class="wrap soft-cta reveal">
+    <p class="mono" style="color:var(--pine)">Worst-case in one minute</p>
+    <h2>Premium share + out-of-pocket maximum, against your salary</h2>
+    <p style="margin-top:20px"><a class="btn btn-primary" href="calculator.html">Open the healthcare liability calculator</a></p>
+    <p class="field-hint" style="margin-top:16px">Print this page if you want a paper checklist at your desk.</p>
+  </div>
+
   <div class="wrap calc-disclaimer reveal">
-    <p>Your employer’s materials and plan documents win if anything conflicts. Stuck on deductible vs OOP max? See the <a href="glossary.html">benefits jargon decoder</a>.</p>
+    <p>Educational process list only. Not insurance, tax, or legal advice. Not a recommendation to enroll in or waive any plan. Confirm numbers against your SBC and plan documents.</p>
   </div>
 </main>
 

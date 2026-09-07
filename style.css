@@ -262,3 +262,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--pine);outline-offse
 }
 
 .field-hint a{color:var(--pine)}
+
+.glossary-intro{max-width:720px;padding-bottom:clamp(24px,4vh,36px)}
+.glossary-intro p{color:var(--ink-soft);font-size:1.05rem;line-height:1.7}
+.glossary-where{margin-top:10px;font-size:.9rem;color:var(--ink-soft);font-style:italic;line-height:1.5}
+.soft-cta{max-width:720px;padding:clamp(40px,7vh,64px) 0 clamp(32px,5vh,48px);border-top:1px solid var(--line)}
+.soft-cta h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(1.25rem,2vw,1.5rem);margin:12px 0 10px;letter-spacing:-.02em}
+.soft-cta p{color:var(--ink-soft);max-width:54ch;line-height:1.65}
+.check-hint a{color:var(--pine)}
